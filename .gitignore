@@ -1,6 +1,9 @@
 # Directory
 credentials/
 
+# Files
+content.json
+
 # Logs
 logs
 *.log
