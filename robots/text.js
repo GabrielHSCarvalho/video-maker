@@ -25,6 +25,7 @@ async function robot() {
 	state.save(content)
 	
 	async function fetchContentFromWikipedia(content) {
+		console.log('text.fetchContentFromWikipedia')
 		const algorithmiaAutenticated = algorithmia.client(algorithmiaApikey)
 		const wikipediaAlgorithm = algorithmiaAutenticated.algo('web/WikipediaParser/0.1.2')
 		const wikipediaResponse = await wikipediaAlgorithm.pipe(content.searchTerm)
@@ -34,6 +35,7 @@ async function robot() {
 	}
 	
 	function sanitizeContent(content) {
+		console.log('text.sanitizeContent')
 		const withoutBlankLinesAndMarkdown = removeBlankLinesAndMarkdown(content.sourceContentOriginal)
 		const withoutDatesInParentheses = removeDatesInParentheses(withoutBlankLinesAndMarkdown)
 
@@ -55,10 +57,12 @@ async function robot() {
 	}
 
 	function removeDatesInParentheses(text) {
+		console.log('text.removeDatesInParentheses')
 		return text.replace(/\((?:\([^()]*\)|[^()])*\)/gm, '').replace(/  /g,' ')
 	}
 	
 	function breakContentIntoSentences(content) {
+		console.log('text.breakContentIntoSentences')
 		content.sentences = []
 		
 		const sentences = sentenceBoundaryDetection.sentences(content.sourceContentSanitized)
@@ -73,17 +77,19 @@ async function robot() {
 	}
 	
 	function limitMaximumSentences(content) {
-		content.sentences = content.sentences.slice(0, content.maximumSentences)
-		
+		console.log('text.limitMaximumSentences')
+		content.sentences = content.sentences.slice(0, content.maximumSentences)		
 	}
 
 	async function fetchKeywordsOfAllSentence(content) {
+		console.log('text.fetchKeywordsOfAllSentence')
 		for (const sentence of content.sentences) {
 			sentence.keywords = await fetchWatsonAndReturnKeywords(sentence.text)
 		}
 		
 	}
 	async function fetchWatsonAndReturnKeywords(sentence) {
+		console.log('text.fetchWatsonAndReturnKeywords')
 		return new Promise((resolve, reject) => {
 			nlu.analyze({
 				text: sentence,
