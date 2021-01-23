@@ -8,13 +8,14 @@ const robots = {
 }
 
 async function start() {
+	//console.log('> [index] start')
 	//robots.input()
 	//await robots.text()
 	//await robots.image()
 	await robots.video()
 	
 	//const content = robots.state.load()
-	//console.dir(content, { depth: null })
+	console.dir(content, { depth: null })
 }
 
 start()

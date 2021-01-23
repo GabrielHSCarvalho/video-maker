@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSearchEngine id="61589caeb9c9fe94c" creator="016713464086824648646" language="en" encoding="UTF-8" cx_id="61589caeb9c9fe94c" last_update_time_millis="1611404910905" autocompletions="true">
+  <Title>Video Maker</Title>
+  <Context>
+    <BackgroundLabels>
+      <Label name="_include_" mode="BOOST"/>
+      <Label name="_exclude_" mode="ELIMINATE"/>
+    </BackgroundLabels>
+  </Context>
+  <LookAndFeel code="4" element_layout="8" theme="7" url_length="breadcrumbs" enable_cse_thumbnail="true" promotion_url_length="breadcrumbs" font="2">
+    <Logo/>
+    <Colors/>
+    <Promotions/>
+    <SearchControls/>
+    <Results/>
+  </LookAndFeel>
+  <ImageSearchSettings enable="true" layout="2"/>
+  <sort_by_keys label="Relevance" key=""/>
+  <sort_by_keys label="Date" key="date"/>
+  <cse_advance_settings/>
+  <schema_org_schemas>Thing</schema_org_schemas>
+</CustomSearchEngine>

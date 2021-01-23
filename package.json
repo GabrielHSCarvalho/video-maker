@@ -17,13 +17,18 @@
   },
   "homepage": "https://github.com/GabrielHSCarvalho/video-maker#readme",
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "@ffprobe-installer/ffprobe": "^1.1.0",
     "algorithmia": "^0.3.10",
+    "ffmpeg": "0.0.4",
     "gm": "^1.23.1",
     "googleapis": "^39.2.0",
     "im": "^0.4.0",
     "image-downloader": "^4.0.2",
+    "open": "^7.3.1",
     "readline-sync": "^1.4.10",
     "sbd": "^1.0.18",
+    "videoshow": "^0.1.12",
     "watson-developer-cloud": "^4.0.1"
   }
 }
